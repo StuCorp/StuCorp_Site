@@ -59,6 +59,11 @@ box-shadow: 0 4px 2px -2px gray;
 /**/
 /*BASE STYLES */
 /**/
+
+ h1{
+  margin-bottom: 0;
+  margin-top: 0;
+}
 ul {
   list-style: none;
   padding: 0;
@@ -163,8 +168,8 @@ h1.banner {
   animation-name: example;
   animation-duration: 4.2s;
   animation-iteration-count: infinite;
-
 }
+
 
 
 /**/
@@ -224,49 +229,37 @@ h1.banner {
 /*PROJECT SECTION*/
 /*              */
 
+
+
 .carousel li{
   list-style: none;
   text-align: center;
+  transition-property: opacity;
+  transition-duration: 1s;
+  position: absolute;
 }
+
 
 .carousel img{
   width: 100%;
   height: 200px;
   object-fit: fill;
-  opacity: 0.7;
 } 
-
-/*.carousel img:nth-child(1)
-{
-  object-position: 50% 0;
-}
-.carousel img:nth-child(2)
-{
-  object-position: 30% 300%;
-}
-
-.carousel img:nth-child(3)
-{
-  object-position: 50% 300%;
-}
-
-.carousel img:nth-child(4)
-{
-  object-position: 50% 20%;
-}
-*/
 
 ul.carousel{
   padding: 0;
+  margin-top: 0;
+  position: relative;
 }
 
-.carousel .hide {
-  display: none;
+.carousel li.hide {
+  opacity: 0;
 }
 
-.carousel .show {
-  display: visible;
+.carousel li.active {
+opacity: 1;  
 }
+
 
 .project-nav, .project-nav .nav {
   /*font-family: 'Raleway', sans-serif;*/
@@ -274,6 +267,10 @@ ul.carousel{
   flex-direction: row;
   width: 100%;
   justify-content: space-between;
+}
+
+.project-nav .nav{
+  /*margin-bottom*/
 }
 
 .project-nav .nav li{
@@ -285,6 +282,10 @@ ul.carousel{
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  transition-property: background;
+    transition-duration: 1s;
+    /*transition-delay: 0.2s*/
+
 }
 
 .project-nav a{
@@ -302,12 +303,30 @@ ul.carousel{
   background: white;
 }
 
+.project-descriptions{
+  position: relative;
+margin-top: 224px;
+}
+
+.project-descriptions p {
+position: absolute;
+transition-property: opacity, left;
+transition-delay: 0.5s;
+transition-duration: 3s;
+
+}
+
 .project-descriptions p.hide {
-display: none;
+/*display: none;*/
+transition-delay: 0, .4s;
+opacity: 0;
+left: -85%;
 }
 
 .project-descriptions p.active {
-display: block;
+/*display: block;*/
+opacity: 1;
+left: 0%;
 }
 
 .all-container{
@@ -316,11 +335,16 @@ display: block;
   flex-direction: column;
 }
 
+
+
 /************/
 /*----------*/
 /*---CONTACT*/
 /*****------*/
 
+#spaceMaker {
+  opacity: 0;
+}
 
 a.social {
   display: inline-block;
@@ -338,9 +362,10 @@ a.social:hover {
   
 }
 
-.contact-container h1{
-
+.contact-container{
+  /*margin-top: 400px;*/
 }
+
 .contact-items{
   justify-content: space-evenly; 
 }
