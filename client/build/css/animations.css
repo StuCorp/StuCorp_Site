@@ -9,6 +9,15 @@ span:nth-child(1){
 }*/
 
 
+@keyframes blink {
+  0%   {opacity: 0;}
+  /*25%  {opacity: 0.25;}*/
+  50%  {opacity: 1;}
+  /*75%  {opacity: 0.75;}*/
+  100% {opacity: 0;}
+  }
+}
+
 /* Standard syntax */
 @keyframes example {
   0%   {background-color: hotpink;}

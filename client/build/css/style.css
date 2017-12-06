@@ -200,6 +200,19 @@ h1.banner {
   margin-bottom: 50px;
   padding: 30px 0;
 }
+.title::after{
+  margin-left: 10px;
+  content: "";
+  background-image: url(../images/heart.png);
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  animation: blink 2.5s infinite;
+  /*border: 1px solid red;*/
+
+
+}
 
 .profile-image-container{
   align-self: center;
@@ -284,8 +297,15 @@ opacity: 1;
   justify-content: flex-start;
   transition-property: background;
     transition-duration: 1s;
+    transition: flex-grow 0.5s;
+position: relative;
     /*transition-delay: 0.2s*/
+}
 
+
+.project-nav .nav li:hover{
+flex-grow: 2;
+border-color: hotpink;
 }
 
 .project-nav a{
@@ -294,13 +314,53 @@ opacity: 1;
 
 }
 
-
 .project-nav li.hide{
   background: lightgrey;
 }
 
 .project-nav li.active{
   background: white;
+}
+
+.pug + i{
+  background-image: url(/../images/pug.svg);
+}
+.blast + i{
+  background-image: url(/../images/rocket.svg);
+}
+.follow + i{
+  background-image: url(/../images/pound.svg);
+}
+.news + i{
+  background-image: url(/../images/newspaper.svg);
+}
+.top20 + i{
+  background-image: url(/../images/music.svg);
+}
+
+.nav-icon{
+  position: absolute;
+  background-size: contain;
+  /*background-size: 18px auto;*/
+  width: 18px;
+  height: 18px;
+  right: -25px;
+  opacity: 0;
+
+    /*transition: right 0.4s ease-in-out 0.3s; */
+}
+
+.project-nav .nav li:hover .nav-icon{
+  opacity: 1;
+  right: 25px;
+  /*right: ;*/
+  transition: opacity 0.2s 0.4s, right .7s ease-in;
+}
+
+
+.project-nav .nav li:hover{
+flex-grow: 2;
+border-color: hotpink;
 }
 
 .project-descriptions{
@@ -401,3 +461,18 @@ a.gmail {
   font-size: 0.5em;
 }
 
+/*---------------*/
+/*---------------*/
+/*--MEDIA QUERIES*/
+/*---------------*/
+/*---------------*/
+
+@media (min-width: 769px) {}
+@media (min-width: 1025px) {
+  
+  .carousel img{
+    width: 40%;
+    height: 200px;
+    object-fit: fill;
+  }   
+}
