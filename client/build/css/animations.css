@@ -16,7 +16,7 @@ span:nth-child(1){
   /*75%  {opacity: 0.75;}*/
   100% {opacity: 0;}
   }
-}
+
 
 /* Standard syntax */
 @keyframes example {
